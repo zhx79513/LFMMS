@@ -1,0 +1,25 @@
+#MyEclipse Hibernate Properties
+#Fri Nov 29 09:18:27 CST 2013
+sessionFactoryName=com.LFMMS.library.POJO.HibernateSessionFactory
+genBasicCompId=true
+profile=
+daoSFId=
+version=3.3
+jndiPath=
+detectM2M=false
+reStrategyClass=
+detectO2O=false
+springDaoFile=
+useJavaTypes=true
+keyGenerator=native
+libInstallFolder=/Web/WEB-INF/lib
+addLibs2Project=true
+genVersionTag=false
+sessionFactoryId=
+basePersistenceClass=
+genAnnotations=true
+reSettingsFile=/League Football Matches Manage System/java/hibernate.reveng.xml
+configFile=/League Football Matches Manage System/java/hibernate.cfg.xml
+createConfigFile=true
+addLibs2Classpath=true
+baseDaoClass=com.LFMMS.library.Hibernate.BaseHibernateDAO
