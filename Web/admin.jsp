@@ -47,7 +47,7 @@ li {
   </div>
   <div class="navbar-collapse collapse navbar-collapse-01">
     <ul class="nav navbar-nav navbar-left">
-      <li> <a href="index.html"> 英超首页 </a> </li>
+      <li> <a href="./"> 英超首页 </a> </li>
       <li class="active"> <a href="#fakelink"> 英超球队 <span class="navbar-unread">1</span> </a>
         <ul>
           <li><a href="#fakelink">阿森纳</a></li>
@@ -85,7 +85,7 @@ li {
         <ul>
         	<li><a href="servlet/PlayerManage">球员信息管理</a> </li>
             <li><a href="servlet/TeamManage">球队信息管理</a> </li>
-            <li><a href="servlet/MatchManage">赛事管理</a> </li>
+            <li><a href="servlet/MatchManage?action=show">赛事管理</a> </li>
         </ul>
         </li>
       <% } %>
@@ -99,7 +99,7 @@ li {
   <h4> 
   <li><button class="btn btn-info mbm"> <a class="text-white-bold" href="servlet/PlayerManage">球员信息管理</a> </button> </li>
   <li><button class="btn btn-info mbm"><a class="text-white-bold" href="servlet/TeamManage">球队信息管理</a></button></li>
-  <li><button class="btn btn-info mbm"><a class="text-white-bold" href="servlet/MatchManage">赛事管理</a></button></li>
+  <li><button class="btn btn-info mbm"><a class="text-white-bold" href="servlet/MatchManage?action=show">赛事管理</a></button></li>
   </h4>
   <%} %>
 </div>

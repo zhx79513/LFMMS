@@ -28,7 +28,7 @@
 </head>
 
 <body>
-	<form method="post" action="servlet/MatchModifyConfirm"
+	<form method="post" action="servlet/MatchManage?action=modify_commit"
 		name="course_modify_form">
 		ID:
 	<input type="text" name="id" value="<%=course.getId()%>" readonly="readonly">

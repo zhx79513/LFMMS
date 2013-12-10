@@ -1,11 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app version="3.0" 
-	xmlns="http://java.sun.com/xml/ns/javaee" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
 	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
-  <display-name></display-name>	
-  <welcome-file-list>
-    <welcome-file>index.jsp</welcome-file>
-  </welcome-file-list>
+
+	<display-name></display-name>
+	<servlet>
+		<servlet-name>MatchManage</servlet-name>
+		<servlet-class>com.LFMMS.library.controller.MatchManage</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>PlayerManage</servlet-name>
+		<servlet-class>com.LFMMS.library.controller.PlayerManage</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>TeamManage</servlet-name>
+		<servlet-class>com.LFMMS.library.controller.TeamManage</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AdminManage</servlet-name>
+		<servlet-class>com.LFMMS.library.controller.AdminManage</servlet-class>
+	</servlet>
+
+
+
+
+
+
+
+
+	<servlet-mapping>
+		<servlet-name>MatchManage</servlet-name>
+		<url-pattern>/servlet/MatchManage</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>PlayerManage</servlet-name>
+		<url-pattern>/servlet/PlayerManage</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>TeamManage</servlet-name>
+		<url-pattern>/servlet/TeamManage</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AdminManage</servlet-name>
+		<url-pattern>/servlet/AdminManage</url-pattern>
+	</servlet-mapping>
+
+	<display-name></display-name>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
 </web-app>

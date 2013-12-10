@@ -24,7 +24,7 @@
 </head>
 
 <body>
-	<form method="post" action="servlet/MatchAdd"
+	<form method="post" action="servlet/MatchManage?action=add"
 		name="course_modify_form">
 		主场球队ID: <input type="text" name="home_id"> <br />
 		客场球队ID: <input type="text" name="away_id"> <br /> 

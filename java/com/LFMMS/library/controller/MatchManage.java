@@ -2,6 +2,7 @@ package com.LFMMS.library.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +14,12 @@ import javax.servlet.http.HttpSession;
 
 import com.LFMMS.library.Hibernate.Course;
 import com.LFMMS.library.Hibernate.CourseDAO;
-import com.LFMMS.library.action.CourseAction;
+import com.LFMMS.library.action.Action;
+import com.LFMMS.library.action.course.CourseAddAction;
+import com.LFMMS.library.action.course.CourseDeleteAction;
+import com.LFMMS.library.action.course.CourseModifyCommitAction;
+import com.LFMMS.library.action.course.CourseModifyShowAction;
+import com.LFMMS.library.action.course.CourseShowAction;
 
 
 public class MatchManage extends HttpServlet {
@@ -71,18 +77,25 @@ public class MatchManage extends HttpServlet {
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-	
-		CourseDAO dao = new CourseDAO();
-		List<Course> result = dao.findAll();
-		
-		ArrayList<Course> courses = new ArrayList<Course>();
-		for (Course course : result) {
-			courses.add(course);
+
+		String strAction = request.getParameter("action");
+		Action action = null;
+
+		if (strAction.equals("show")) {
+			action = new CourseShowAction();
+		} else if (strAction.equals("add")) {
+			action = new CourseAddAction();
+		} else if (strAction.equals("delete")) {
+			action = new CourseDeleteAction();
+		} else if (strAction.equals("modify_show")) {
+			action = new CourseModifyShowAction();
+		} else if (strAction.equals("modify_commit")) {
+			action = new CourseModifyCommitAction();
+		} else {
+			throw new ServletException("Invalid action: " + strAction);
 		}
-		
-		HttpSession session = request.getSession();
-		session.setAttribute("courses", courses);
-		response.sendRedirect("/LFMMS/match_mng.jsp");
+
+		action.doAction(request, response);
 	}
 
 	/**

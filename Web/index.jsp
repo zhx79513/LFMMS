@@ -161,8 +161,8 @@ li {
         <ul>
         	<li><a href="servlet/PlayerManage">球员信息管理</a> </li>
             <li><a href="servlet/TeamManage">球队信息管理</a> </li>
-            <li><a href="servlet/MatchManage">赛事管理</a> </li>
-            <li><a href="servlet/AdminLogout">退出登陆</a> </li>
+            <li><a href="servlet/MatchManage?action=show">赛事管理</a> </li>
+            <li><a href="servlet/AdminManage?action=logout">退出登陆</a> </li>
         </ul>
         </li>
       <% } %>

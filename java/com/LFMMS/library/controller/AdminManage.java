@@ -2,28 +2,22 @@ package com.LFMMS.library.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.hibernate.Transaction;
+import com.LFMMS.library.action.Action;
+import com.LFMMS.library.action.admin.AdminLoginAction;
+import com.LFMMS.library.action.admin.AdminLogoutAction;
 
-import com.LFMMS.library.Hibernate.Course;
-import com.LFMMS.library.Hibernate.CourseDAO;
-import com.LFMMS.library.Hibernate.Team;
-import com.LFMMS.library.Hibernate.TeamDAO;
-
-public class MatchAdd extends HttpServlet {
+public class AdminManage extends HttpServlet {
 
 	/**
 	 * Constructor of the object.
 	 */
-	public MatchAdd() {
+	public AdminManage() {
 
 		super();
 	}
@@ -65,32 +59,19 @@ public class MatchAdd extends HttpServlet {
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
+		String strAction = request.getParameter("action");
+		Action action = null;
 		
-		String homeId = request.getParameter("home_id");
-		String awayId = request.getParameter("away_id");
-		String turn = request.getParameter("turn");
-		String date = request.getParameter("date");
-		String homeScore = request.getParameter("home_score");
-		String awayScore = request.getParameter("away_score");
-		
-		CourseDAO courseDAO = new CourseDAO();
-		TeamDAO teamDAO = new TeamDAO();
-		Transaction transaction = courseDAO.getSession().beginTransaction();
-		
-		try {
-			Team homeTeam = teamDAO.findById(Integer.valueOf(homeId));
-			Team awayTeam = teamDAO.findById(Integer.valueOf(awayId));
-			Timestamp ts = Timestamp.valueOf(date);
-			Course course = new Course(homeTeam, awayTeam, Short.valueOf(turn), 
-					ts, Short.valueOf(homeScore), Short.valueOf(awayScore));
-			courseDAO.save(course);
-			transaction.commit();
-		} catch (Exception e) {
-			e.printStackTrace();
-			transaction.rollback();
+		if (strAction.equals("login")) {
+			action = new AdminLoginAction();
+		} else if (strAction.equals("logout")) {
+			action = new AdminLogoutAction();
+		} else {
+			throw new ServletException("Invalid action: " + strAction);
 		}
 		
-		response.sendRedirect("MatchManage");
+		action.doAction(request, response);
 	}
 
 	/**

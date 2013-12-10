@@ -48,7 +48,7 @@
   </div>
   <div class="navbar-collapse collapse navbar-collapse-01">
     <ul class="nav navbar-nav navbar-left">
-      <li> <a href="index.jsp"> 英超首页 </a> </li>
+      <li> <a href="./"> 英超首页 </a> </li>
       <li class="active"> <a href="#fakelink"> 英超球队 </a>
         <ul>
           <li><a href="#fakelink">阿森纳</a></li>
@@ -86,8 +86,8 @@
         <ul>
         	<li><a href="servlet/PlayerManage">球员信息管理</a> </li>
             <li><a href="servlet/TeamManage">球队信息管理</a> </li>
-            <li><a href="servlet/MatchManage">赛事管理</a> </li>
-            <li><a href="servlet/AdminLogout">退出登陆</a> </li>
+            <li><a href="servlet/MatchManage?action=show">赛事管理</a> </li>
+            <li><a href="servlet/AdminManage?action=logout">退出登陆</a> </li>
         </ul>
         </li>
       <% } %>
@@ -124,8 +124,8 @@
 				<td><%=course.getHomeScore()%></td>
 				<td><%=course.getAwayScore()%></td>
 				<td><a
-					href="servlet/MatchModify?course_id=<%=course.getId()%>">修改</a>&nbsp;<a
-					href="servlet/MatchDelete?course_id=<%=course.getId()%>">删除</a>
+					href="servlet/MatchManage?action=modify_show&course_id=<%=course.getId()%>">修改</a>&nbsp;<a
+					href="servlet/MatchManage?action=delete&course_id=<%=course.getId()%>">删除</a>
 				</td>
 
 			</tr>
@@ -136,7 +136,7 @@
 	</table>
 
 <a href="/LFMMS/match_add.jsp">添加</a>
-<a href="javascript:void(0);" onClick="javascript:window.history.back(); return false;">返回</a>
+<a href="javascript:void(0);" onClick="javascript:window.history.back();">返回</a>
 </div>
 <!-- /.container --> 
 
