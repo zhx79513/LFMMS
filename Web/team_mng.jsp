@@ -55,6 +55,6 @@
 		</tbody>
 	</table>
 	<a href="/LFMMS/team_add.jsp">添加</a>
-	<a href="/LFMMS/admin.jsp">返回</a>
+	<a href="./">返回</a>
 </body>
 </html>

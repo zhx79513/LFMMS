@@ -7,7 +7,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </jsp:useBean>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
 <head>
 <meta charset="utf-8">
 <title>管理页面</title>
@@ -83,7 +83,7 @@ li {
       <li> <a href="admin.jsp"> 用户： <%=admin.getUsername() %> <br/>
         </a> 
         <ul>
-        	<li><a href="servlet/PlayerManage">球员信息管理</a> </li>
+        	<li><a href="servlet/PlayerManage?action=show">球员信息管理</a> </li>
             <li><a href="servlet/TeamManage">球队信息管理</a> </li>
             <li><a href="servlet/MatchManage?action=show">赛事管理</a> </li>
         </ul>
@@ -97,7 +97,7 @@ li {
   登陆失败
   <%} else {%>
   <h4> 
-  <li><button class="btn btn-info mbm"> <a class="text-white-bold" href="servlet/PlayerManage">球员信息管理</a> </button> </li>
+  <li><button class="btn btn-info mbm"> <a class="text-white-bold" href="servlet/PlayerManage?action=show">球员信息管理</a> </button> </li>
   <li><button class="btn btn-info mbm"><a class="text-white-bold" href="servlet/TeamManage">球队信息管理</a></button></li>
   <li><button class="btn btn-info mbm"><a class="text-white-bold" href="servlet/MatchManage?action=show">赛事管理</a></button></li>
   </h4>

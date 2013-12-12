@@ -56,8 +56,8 @@
 				<td><%=player.getWeight()%></td>
 				<td><%=player.getBirthday()%></td>
 				<td><a
-					href="servlet/PlayerModify?player_id=<%=player.getId()%>">修改</a>&nbsp;<a
-					href="servlet/PlayerDelete?player_id=<%=player.getId()%>">删除</a></td>
+					href="servlet/PlayerManage?action=modify_show&player_id=<%=player.getId()%>">修改</a>&nbsp;<a
+					href="servlet/PlayerManage?action=delete&player_id=<%=player.getId()%>">删除</a></td>
 
 			</tr>
 			<%
@@ -66,6 +66,6 @@
 		</tbody>
 	</table>
 	<a href="/LFMMS/player_add.jsp">添加</a>
-	<a href="/LFMMS/admin.jsp">返回</a>
+	<a href="./">返回</a>
 </body>
 </html>

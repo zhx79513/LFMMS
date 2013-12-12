@@ -1,5 +1,17 @@
+<%@ page language="java"
+	import="java.util.*, com.LFMMS.library.Hibernate.*"
+	pageEncoding="UTF-8"%>
+
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://" + request.getServerName() + ":"
+			+ request.getServerPort() + path + "/";
+%>
+<jsp:useBean id="admin" class="com.LFMMS.library.Hibernate.Admin" scope="session">
+</jsp:useBean>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
 <head>
 <meta charset="utf-8">
 <title>LFMMS template</title>
@@ -34,8 +46,8 @@
   </div>
   <div class="navbar-collapse collapse navbar-collapse-01">
     <ul class="nav navbar-nav navbar-left">
-      <li> <a href="index.html"> 英超首页 </a> </li>
-      <li class="active"> <a href="#fakelink"> 英超球 </a>
+      <li> <a href="./"> 英超首页 </a> </li>
+      <li class="active"> <a href="#fakelink"> 英超球队 </a>
         <ul>
           <li><a href="#fakelink">阿森纳</a></li>
           <li><a href="#fakelink">曼联</a></li>
@@ -51,7 +63,7 @@
           <li><a href="#fakelink">斯坦福桥球场</a></li>
         </ul>
       </li>
-      <li class="active"> <a href="#fakelink"> 赛事信息  </a>
+      <li class="active"> <a href="#fakelink"> 赛事信息 </a>
         <ul>
           <li><a href="#fakelink">当轮比分</a></li>
           <li><a href="#fakelink">当轮最佳</a></li>
@@ -64,7 +76,19 @@
           </li>
         </ul>
       </li>
-      <li> <a href="admin_login.html"> 后台管理 </a> </li>
+      <% if (admin == null || admin.getUsername() == null || admin.getUsername().isEmpty()) {%>
+      <li> <a href="admin_login.html"> 用户：登陆失败 </a> </li>
+      <%} else {%>
+      <li> <a href="admin.jsp"> 用户： <%=admin.getUsername() %> <br/>
+        </a> 
+        <ul>
+        	<li><a href="servlet/PlayerManage?action=show">球员信息管理</a> </li>
+            <li><a href="servlet/TeamManage">球队信息管理</a> </li>
+            <li><a href="servlet/MatchManage?action=show">赛事管理</a> </li>
+            <li><a href="servlet/AdminManage?action=logout">退出登陆</a> </li>
+        </ul>
+        </li>
+      <% } %>
     </ul>
   </div>
 </div>

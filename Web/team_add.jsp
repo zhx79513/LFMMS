@@ -31,7 +31,7 @@
 		主教练: <input type="text" name="coach"> <br /> 
 		<input type="submit" name="submit" value="添加"> 
 		<input type="reset" name="reset" value="重置"> 
-		<input type="button" value="返回" onclick="javascript:window.history.back();">
+		<input type="button" value="返回" onclick="javascript:window.location.href='./';">
 	</form>
 
 </body>

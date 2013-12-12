@@ -12,7 +12,7 @@
 </jsp:useBean>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
 <head>
 <base href="<%=basePath%>">
 <meta charset="utf-8">
@@ -84,7 +84,7 @@
       <li> <a href="admin.jsp"> 用户： <%=admin.getUsername() %> <br/>
         </a> 
         <ul>
-        	<li><a href="servlet/PlayerManage">球员信息管理</a> </li>
+        	<li><a href="servlet/PlayerManage?action=show">球员信息管理</a> </li>
             <li><a href="servlet/TeamManage">球队信息管理</a> </li>
             <li><a href="servlet/MatchManage?action=show">赛事管理</a> </li>
             <li><a href="servlet/AdminManage?action=logout">退出登陆</a> </li>
@@ -136,7 +136,7 @@
 	</table>
 
 <a href="/LFMMS/match_add.jsp">添加</a>
-<a href="javascript:void(0);" onClick="javascript:window.history.back();">返回</a>
+<a href="javascript:void(0);" onClick="javascript:window.location.href='./'">返回</a>
 </div>
 <!-- /.container --> 
 

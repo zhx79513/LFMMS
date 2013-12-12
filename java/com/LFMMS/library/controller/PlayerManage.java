@@ -13,6 +13,12 @@ import javax.servlet.http.HttpSession;
 
 import com.LFMMS.library.Hibernate.Player;
 import com.LFMMS.library.Hibernate.PlayerDAO;
+import com.LFMMS.library.action.Action;
+import com.LFMMS.library.action.player.PlayerAddAction;
+import com.LFMMS.library.action.player.PlayerDeleteAction;
+import com.LFMMS.library.action.player.PlayerModifyCommitAction;
+import com.LFMMS.library.action.player.PlayerModifyShowAction;
+import com.LFMMS.library.action.player.PlayerShowAction;
 
 public class PlayerManage extends HttpServlet {
 
@@ -62,17 +68,24 @@ public class PlayerManage extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		PlayerDAO playerDAO = new PlayerDAO();
-		List<Player> result = playerDAO.findAll();
+		String strAction = request.getParameter("action");
+		Action action = null;
 		
-		ArrayList<Player> players = new ArrayList<Player>();
-		for (Player player : result) {
-			players.add(player);
+		if (strAction.equals("show")) {
+			action = new PlayerShowAction();
+		} else if (strAction.equals("add")) {
+			action = new PlayerAddAction();
+		} else if (strAction.equals("delete")) {
+			action = new PlayerDeleteAction();
+		} else if (strAction.equals("modify_show")) {
+			action = new PlayerModifyShowAction();
+		} else if (strAction.equals("modify_commit")) {
+			action = new PlayerModifyCommitAction();
+		} else {
+			throw new ServletException("Invalid action: " + strAction);
 		}
 		
-		HttpSession session = request.getSession();
-		session.setAttribute("players", players);
-		response.sendRedirect("/LFMMS/player_mng.jsp");
+		action.doAction(request, response);
 	}
 
 	/**

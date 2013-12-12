@@ -28,7 +28,7 @@
 </head>
 
 <body>
-	<form method="post" action="servlet/PlayerModifyConfirm"
+	<form method="post" action="servlet/PlayerManage?action=modify_commit"
 		name="course_modify_form">
 		ID: <input type="text" name="id" value="<%=player.getId()%>" readonly="readonly"> <br /> 
 		姓名: <input type="text" name="name" value="<%=player.getName()%>"> <br /> 
@@ -40,7 +40,7 @@
 		生日: <input type="text" name="birthday" value="<%=player.getBirthday()%>"> <br /> 
 		<input type="submit" name="submit" value="修改"> 
 		<input type="reset" name="reset" value="重置"> 
-		<input type="button" value="返回" onclick="javascript:window.history.back();">
+		<input type="button" value="返回" onclick="javascript:window.location.href='./';">
 	</form>
 
 
