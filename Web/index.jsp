@@ -120,7 +120,7 @@ li {
       <li> <a href="index.jsp"> 英超首页 </a> </li>
       <li class="active"> <a href="#fakelink"> 英超球队 <span class="navbar-unread">1</span> </a>
         <ul>
-          <li><a href="#fakelink">阿森纳</a>
+          <li><a href="arsenal.jsp">阿森纳</a>
           <ul>
           <li>
           <a href=""></a>
@@ -134,7 +134,7 @@ li {
       </li>
       <li > <a href="#fakelink"> 赛场介绍</a>
         <ul>
-          <li><a href="#fakelink">老特拉福德球场</a></li>
+          <li><a href="old_trafford.jsp">老特拉福德球场</a></li>
           <li><a href="#fakelink">酋长球场</a></li>
           <li> <a href="#fakelink">圣安菲尔德球场</a> </li>
           <li><a href="#fakelink">斯坦福桥球场</a></li>
