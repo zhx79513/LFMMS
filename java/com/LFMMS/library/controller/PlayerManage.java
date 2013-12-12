@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import com.LFMMS.library.Hibernate.Player;
 import com.LFMMS.library.Hibernate.PlayerDAO;
 import com.LFMMS.library.action.Action;
+import com.LFMMS.library.action.player.PlayerAction;
 import com.LFMMS.library.action.player.PlayerAddAction;
 import com.LFMMS.library.action.player.PlayerDeleteAction;
 import com.LFMMS.library.action.player.PlayerModifyCommitAction;
@@ -69,7 +70,7 @@ public class PlayerManage extends HttpServlet {
 			throws ServletException, IOException {
 
 		String strAction = request.getParameter("action");
-		Action action = null;
+		PlayerAction action = null;
 		
 		if (strAction.equals("show")) {
 			action = new PlayerShowAction();

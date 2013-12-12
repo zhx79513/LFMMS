@@ -24,7 +24,7 @@
 </head>
 
 <body>
-	<form method="post" action="servlet/TeamAdd"
+	<form method="post" action="servlet/TeamManage?action=add"
 		name="course_modify_form">
 		名称: <input type="text" name="name"> <br />
 		主场: <input type="text" name="home"> <br /> 

@@ -11,10 +11,9 @@ import javax.servlet.http.HttpSession;
 
 import com.LFMMS.library.Hibernate.Course;
 import com.LFMMS.library.Hibernate.CourseDAO;
-import com.LFMMS.library.action.Action;
 
 
-public class CourseShowAction implements Action{
+public class CourseShowAction extends CourseAction{
 
 	public void doAction(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

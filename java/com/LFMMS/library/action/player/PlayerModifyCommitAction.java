@@ -15,10 +15,9 @@ import com.LFMMS.library.Hibernate.Player;
 import com.LFMMS.library.Hibernate.PlayerDAO;
 import com.LFMMS.library.Hibernate.Team;
 import com.LFMMS.library.Hibernate.TeamDAO;
-import com.LFMMS.library.action.Action;
 
 
-public class PlayerModifyCommitAction implements Action {
+public class PlayerModifyCommitAction extends PlayerAction {
 
 	@Override
 	public void doAction(HttpServletRequest request, HttpServletResponse response)

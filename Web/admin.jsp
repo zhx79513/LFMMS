@@ -84,7 +84,7 @@ li {
         </a> 
         <ul>
         	<li><a href="servlet/PlayerManage?action=show">球员信息管理</a> </li>
-            <li><a href="servlet/TeamManage">球队信息管理</a> </li>
+            <li><a href="servlet/TeamManage?action=show">球队信息管理</a> </li>
             <li><a href="servlet/MatchManage?action=show">赛事管理</a> </li>
         </ul>
         </li>
@@ -98,7 +98,7 @@ li {
   <%} else {%>
   <h4> 
   <li><button class="btn btn-info mbm"> <a class="text-white-bold" href="servlet/PlayerManage?action=show">球员信息管理</a> </button> </li>
-  <li><button class="btn btn-info mbm"><a class="text-white-bold" href="servlet/TeamManage">球队信息管理</a></button></li>
+  <li><button class="btn btn-info mbm"><a class="text-white-bold" href="servlet/TeamManage?action=show">球队信息管理</a></button></li>
   <li><button class="btn btn-info mbm"><a class="text-white-bold" href="servlet/MatchManage?action=show">赛事管理</a></button></li>
   </h4>
   <%} %>

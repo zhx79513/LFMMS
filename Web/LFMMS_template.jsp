@@ -79,11 +79,11 @@
       <% if (admin == null || admin.getUsername() == null || admin.getUsername().isEmpty()) {%>
       <li> <a href="admin_login.html"> 用户：登陆失败 </a> </li>
       <%} else {%>
-      <li> <a href="admin.jsp"> 用户： <%=admin.getUsername() %> <br/>
+      <li><a href="#">  用户： <%=admin.getUsername() %> <br/>
         </a> 
         <ul>
         	<li><a href="servlet/PlayerManage?action=show">球员信息管理</a> </li>
-            <li><a href="servlet/TeamManage">球队信息管理</a> </li>
+            <li><a href="servlet/TeamManage?action=show">球队信息管理</a> </li>
             <li><a href="servlet/MatchManage?action=show">赛事管理</a> </li>
             <li><a href="servlet/AdminManage?action=logout">退出登陆</a> </li>
         </ul>

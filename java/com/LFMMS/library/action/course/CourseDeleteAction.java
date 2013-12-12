@@ -10,10 +10,9 @@ import org.hibernate.Transaction;
 
 import com.LFMMS.library.Hibernate.Course;
 import com.LFMMS.library.Hibernate.CourseDAO;
-import com.LFMMS.library.action.Action;
 
 
-public class CourseDeleteAction implements Action {
+public class CourseDeleteAction extends CourseAction {
 
 	@Override
 	public void doAction(HttpServletRequest request, HttpServletResponse response)

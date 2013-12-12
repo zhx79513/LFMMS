@@ -13,10 +13,9 @@ import com.LFMMS.library.Hibernate.Course;
 import com.LFMMS.library.Hibernate.CourseDAO;
 import com.LFMMS.library.Hibernate.Team;
 import com.LFMMS.library.Hibernate.TeamDAO;
-import com.LFMMS.library.action.Action;
 
 
-public class CourseModifyCommitAction implements Action {
+public class CourseModifyCommitAction extends CourseAction {
 
 	@Override
 	public void doAction(HttpServletRequest request, HttpServletResponse response)

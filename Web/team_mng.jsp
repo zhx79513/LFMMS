@@ -46,8 +46,8 @@
 				<td><%=team.getName()%></td>
 				<td><%=team.getHome()%></td>
 				<td><%=team.getCoach()%></td>
-				<td><a href="servlet/TeamModify?team_id=<%=team.getId()%>">修改</a>&nbsp;<a
-					href="servlet/TeamDelete?team_id=<%=team.getId()%>">删除</a></td>
+				<td><a href="servlet/TeamManage?action=modify_show&team_id=<%=team.getId()%>">修改</a>&nbsp;<a
+					href="servlet/TeamManage?action=delete&team_id=<%=team.getId()%>">删除</a></td>
 			</tr>
 			<%
 				}

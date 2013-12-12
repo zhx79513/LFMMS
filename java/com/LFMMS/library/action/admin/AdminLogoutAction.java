@@ -7,10 +7,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.LFMMS.library.action.Action;
 
 
-public class AdminLogoutAction implements Action {
+public class AdminLogoutAction extends AdminAction {
 
 	@Override
 	public void doAction(HttpServletRequest request, HttpServletResponse response)

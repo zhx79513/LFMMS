@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.LFMMS.library.action.Action;
+import com.LFMMS.library.action.admin.AdminAction;
 import com.LFMMS.library.action.admin.AdminLoginAction;
 import com.LFMMS.library.action.admin.AdminLogoutAction;
 
@@ -61,7 +62,7 @@ public class AdminManage extends HttpServlet {
 			throws ServletException, IOException {
 
 		String strAction = request.getParameter("action");
-		Action action = null;
+		AdminAction action = null;
 		
 		if (strAction.equals("login")) {
 			action = new AdminLoginAction();

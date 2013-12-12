@@ -1,20 +1,13 @@
 package com.LFMMS.library.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import com.LFMMS.library.Hibernate.Course;
-import com.LFMMS.library.Hibernate.CourseDAO;
-import com.LFMMS.library.action.Action;
+import com.LFMMS.library.action.course.CourseAction;
 import com.LFMMS.library.action.course.CourseAddAction;
 import com.LFMMS.library.action.course.CourseDeleteAction;
 import com.LFMMS.library.action.course.CourseModifyCommitAction;
@@ -79,7 +72,7 @@ public class MatchManage extends HttpServlet {
 			throws ServletException, IOException {
 
 		String strAction = request.getParameter("action");
-		Action action = null;
+		CourseAction action = null;
 
 		if (strAction.equals("show")) {
 			action = new CourseShowAction();

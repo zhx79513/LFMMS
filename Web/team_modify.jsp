@@ -28,7 +28,7 @@
 </head>
 
 <body>
-	<form method="post" action="servlet/TeamModifyConfirm"
+	<form method="post" action="servlet/TeamManage?action=modify_commit"
 		name="course_modify_form">
 		ID:
 	<input type="text" name="id" value="<%=team.getId()%>" readonly="readonly">

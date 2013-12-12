@@ -11,10 +11,9 @@ import javax.servlet.http.HttpSession;
 
 import com.LFMMS.library.Hibernate.Player;
 import com.LFMMS.library.Hibernate.PlayerDAO;
-import com.LFMMS.library.action.Action;
 
 
-public class PlayerShowAction implements Action {
+public class PlayerShowAction extends PlayerAction {
 
 	@Override
 	public void doAction(HttpServletRequest request, HttpServletResponse response)

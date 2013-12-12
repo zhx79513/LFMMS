@@ -10,11 +10,10 @@ import javax.servlet.http.HttpSession;
 
 import com.LFMMS.library.Hibernate.Admin;
 import com.LFMMS.library.Hibernate.AdminDAO;
-import com.LFMMS.library.action.Action;
 import com.LFMMS.library.utility.MD5Util;
 
 
-public class AdminLoginAction implements Action {
+public class AdminLoginAction extends AdminAction {
 
 	@Override
 	public void doAction(HttpServletRequest request, HttpServletResponse response)
