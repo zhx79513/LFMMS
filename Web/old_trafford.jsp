@@ -30,7 +30,7 @@
   <div id="loading" class="loading"><span>Loading...</span></div>
   <nav>
     <ul id="menu" class="menu">
-      <li> <a href="#" id="about"> <img src="" alt=""/> <span class="active"></span> <span class="wrap"> <span class="link">About</span> <span class="descr">Know me</span> </span> </a> </li>
+      <li> <a href="#" id="about"> <img src="images/1.jpg" alt=""/> <span class="active"></span> <span class="wrap"> <span class="link">About</span> <span class="descr">Know me</span> </span> </a> </li>
       <li> <a href="#" id="projects"> <img src="images/2.jpg" alt=""/> <span class="active"></span> <span class="wrap"> <span class="link">Projects</span> <span class="descr">My work</span> </span> </a> </li>
       <li> <a href="#" id="contact"> <img src="images/3.jpg" alt=""/> <span class="active"></span> <span class="wrap"> <span class="link">Contact</span> <span class="descr">Get in touch</span> </span> </a> </li>
     </ul>
@@ -39,7 +39,19 @@
 <ul id="nav" class="navigation footer" style="">
   <li class="album"> <span class="link" id="toggle"><span class="arrow_down"></span></span>
     <div class="wrapper thumbs_wrapper">
-      <div class="thumbs"> <img src="images/album/thumbs/1.jpg" alt="images/album/1.jpg"/> <img src="images/album/thumbs/2.jpg" alt="images/album/2.jpg"/> <img src="images/album/thumbs/3.jpg" alt="images/album/3.jpg"/> <img src="images/album/thumbs/4.jpg" alt="images/album/4.jpg"/> <img src="images/album/thumbs/1.jpg" alt="images/album/1.jpg"/> <img src="images/album/thumbs/2.jpg" alt="images/album/2.jpg"/> <img src="images/album/thumbs/3.jpg" alt="images/album/3.jpg"/> <img src="images/album/thumbs/4.jpg" alt="images/album/4.jpg"/> <img src="images/album/thumbs/5.jpg" alt="images/album/5.jpg"/> <img src="images/album/thumbs/6.jpg" alt="images/album/6.jpg"/> </div>
+      <div class="thumbs"> 
+      	<img src="images/album/thumbs/1.jpg" alt="images/album/1.jpg"/> 
+      	<img src="images/album/thumbs/2.jpg" alt="images/album/2.jpg"/> 
+      	<img src="images/album/thumbs/3.jpg" alt="images/album/3.jpg"/> 
+      	<img src="images/album/thumbs/4.jpg" alt="images/album/4.jpg"/> 
+     
+        <img src="images/album/thumbs/1.jpg" alt="images/album/1.jpg"/> 
+      	<img src="images/album/thumbs/2.jpg" alt="images/album/2.jpg"/> 
+      	<img src="images/album/thumbs/3.jpg" alt="images/album/3.jpg"/> 
+      	<img src="images/album/thumbs/4.jpg" alt="images/album/4.jpg"/> 
+        <img src="images/album/thumbs/5.jpg" alt="images/album/5.jpg"/> 
+        <img src="images/album/thumbs/6.jpg" alt="images/album/6.jpg"/>  
+      </div>
     </div>
   </li>
 </ul>
