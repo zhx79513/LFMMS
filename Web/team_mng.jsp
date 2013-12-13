@@ -45,11 +45,11 @@
   <table border="2" align="center" width="95%">
 		<tbody>
 			<tr>
-				<td>ID</td>
-				<td>名称</td>
-				<td>主场</td>
-				<td>主教练</td>
-				<td>操作</td>
+				<th>ID</th>
+				<th>名称</th>
+				<th>主场</th>
+				<th>主教练</th>
+				<th>操作</th>
 			</tr>
 			<%
 				Iterator<Team> it = teams.iterator();

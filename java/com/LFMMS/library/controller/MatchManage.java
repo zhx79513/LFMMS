@@ -71,6 +71,7 @@ public class MatchManage extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		request.setCharacterEncoding("UTF-8");
 		String strAction = request.getParameter("action");
 		CourseAction action = null;
 

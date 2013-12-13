@@ -43,15 +43,15 @@
  <table border="2" align="center" width="95%">
 		<tbody>
 			<tr>
-				<td>ID</td>
-				<td>姓名</td>
-				<td>球队ID</td>
-				<td>球衣号码</td>
-				<td>场上位置</td>
-				<td>身高</td>
-				<td>体重</td>
-				<td>生日</td>
-				<td>操作</td>
+				<th>ID</th>
+				<th>姓名</th>
+				<th>球队ID</th>
+				<th>球衣号码</th>
+				<th>场上位置</th>
+				<th>身高</th>
+				<th>体重</th>
+				<th>生日</th>
+				<th>操作</th>
 			</tr>
 			<%
 				Iterator<Player> it = players.iterator();

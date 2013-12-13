@@ -46,14 +46,14 @@
   <table border="2" align="center" width="95%">
 		<tbody>
 			<tr>
-				<td>ID</td>
-				<td>主场球队ID</td>
-				<td>客场球队ID</td>
-				<td>比赛轮次</td>
-				<td>比赛日期</td>
-				<td>主队比分</td>
-				<td>客队比分</td>
-				<td>操作</td>
+				<th>ID</th>
+				<th>主场球队ID</th>
+				<th>客场球队ID</th>
+				<th>比赛轮次</th>
+				<th>比赛日期</th>
+				<th>主队比分</th>
+				<th>客队比分</th>
+				<th>操作</th>
 			</tr>
 			<%
 				Iterator it = courses.iterator();
