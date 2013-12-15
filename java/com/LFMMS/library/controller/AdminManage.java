@@ -9,9 +9,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.LFMMS.library.action.Action;
-import com.LFMMS.library.action.admin.AdminAction;
-import com.LFMMS.library.action.admin.AdminLoginAction;
-import com.LFMMS.library.action.admin.AdminLogoutAction;
+import com.LFMMS.library.action.ActionFactory;
+import com.LFMMS.library.action.Admin.AdminAction;
+import com.LFMMS.library.action.Admin.AdminLoginAction;
+import com.LFMMS.library.action.Admin.AdminLogoutAction;
+import com.LFMMS.library.constant.CONSTANT;
 
 public class AdminManage extends HttpServlet {
 
@@ -63,17 +65,16 @@ public class AdminManage extends HttpServlet {
 
 		request.setCharacterEncoding("UTF-8");
 		String strAction = request.getParameter("action");
-		AdminAction action = null;
+		String redirect = request.getParameter("redirect");
 		
-		if (strAction.equals("login")) {
-			action = new AdminLoginAction();
-		} else if (strAction.equals("logout")) {
-			action = new AdminLogoutAction();
-		} else {
-			throw new ServletException("Invalid action: " + strAction);
+		ActionFactory factory = new ActionFactory("Admin", strAction);
+		try {
+			Action action = factory.getInstance();
+			action.doAction(request);
+			response.sendRedirect(redirect);
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-		
-		action.doAction(request, response);
 	}
 
 	/**

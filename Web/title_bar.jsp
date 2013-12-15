@@ -1,5 +1,5 @@
 <%@ page language="java"
-	import="java.util.*, com.LFMMS.library.Hibernate.*"
+	import="java.util.*, com.LFMMS.library.Hibernate.*, com.LFMMS.library.constant.*"
 	pageEncoding="UTF-8"%>
 
 <jsp:useBean id="admin" class="com.LFMMS.library.Hibernate.Admin"
@@ -59,7 +59,7 @@
 				</li>
 				<li class="active"><a href="#fakelink"> 英超球队 </a>
 					<ul>
-						<li><a href="arsenal.jsp">阿森纳</a></li>
+						<li><a href="servlet/TeamManage?action=<%=CONSTANT.ACTIONPARAM.SHOWBYNAME %>&name=阿森纳&redirect=<%=_path %>/arsenal.jsp">阿森纳</a></li>
 						<li><a href="#fakelink">曼联</a></li>
 						<li><a href="#fakelink">利物浦</a>
 						</li>
@@ -75,7 +75,7 @@
 						<li><a href="#fakelink">斯坦福桥球场</a></li>
 					</ul>
 				</li>
-				<li class="active"><a href="#fakelink"> 赛事信息 </a>
+				<li class="active"><a href="servlet/MatchManage?action=<%=CONSTANT.ACTIONPARAM.SHOWALL %>&redirect=<%=_path %>/match_center.jsp"> 赛事信息 </a>
 					<ul>
 						<li><a href="#fakelink">当轮比分</a></li>
 						<li><a href="#fakelink">当轮最佳</a></li>
@@ -98,13 +98,13 @@
 				%>
 				<li><a href="#"> 用户： <%=admin.getUsername()%> <br /> </a>
 					<ul>
-						<li><a href="servlet/PlayerManage?action=show">球员信息管理</a>
+						<li><a href="servlet/PlayerManage?action=<%=CONSTANT.ACTIONPARAM.SHOWALL %>&redirect=<%=_path %>/player_mng.jsp">球员信息管理</a>
 						</li>
-						<li><a href="servlet/TeamManage?action=show">球队信息管理</a>
+						<li><a href="servlet/TeamManage?action=<%=CONSTANT.ACTIONPARAM.SHOWALL %>&redirect=<%=_path %>/team_mng.jsp">球队信息管理</a>
 						</li>
-						<li><a href="servlet/MatchManage?action=show">赛事管理</a>
+						<li><a href="servlet/MatchManage?action=<%=CONSTANT.ACTIONPARAM.SHOWALL %>&redirect=<%=_path %>/match_mng.jsp">赛事管理</a>
 						</li>
-						<li><a href="servlet/AdminManage?action=logout">退出登陆</a>
+						<li><a href="servlet/AdminManage?action=<%=CONSTANT.ACTIONPARAM.LOGOUT %>&redirect=<%=_path %>/index.jsp">退出登陆</a>
 						</li>
 					</ul>
 				</li>

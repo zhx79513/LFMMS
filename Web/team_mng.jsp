@@ -61,8 +61,8 @@
 				<td><%=team.getName()%></td>
 				<td><%=team.getHome()%></td>
 				<td><%=team.getCoach()%></td>
-				<td><a href="servlet/TeamManage?action=modify_show&team_id=<%=team.getId()%>">修改</a>&nbsp;<a
-					href="servlet/TeamManage?action=delete&team_id=<%=team.getId()%>">删除</a></td>
+				<td><a href="servlet/TeamManage?action=<%=CONSTANT.ACTIONPARAM.SHOWBYID %>&team_id=<%=team.getId()%>&redirect=<%=path %>/team_modify.jsp">修改</a>&nbsp;<a
+					href="servlet/TeamManage?action=<%=CONSTANT.ACTIONPARAM.DELETE %>&team_id=<%=team.getId()%>&redirect=TeamManage?action=<%=CONSTANT.ACTIONPARAM.SHOWALL %>%26redirect=<%=path %>/team_mng.jsp">删除</a></td>
 			</tr>
 			<%
 				}

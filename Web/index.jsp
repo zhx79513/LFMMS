@@ -105,6 +105,10 @@ li {
 	color: white;
 	font-weight: bold;
 }
+
+body {
+	background-color: #C7EDCC;
+}
 </style>
 </head>
 <body>
@@ -183,6 +187,5 @@ li {
     <p></p>
   </div>
 </div>
- 
 </body>
 </html>

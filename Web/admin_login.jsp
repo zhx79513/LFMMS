@@ -57,7 +57,7 @@ table .login-align {
         <h4>Welcome to <small>LFMMS</small></h4>
       </div>
       <div class="login-form">
-        <form method="post" action="servlet/AdminManage?action=login" name="Admin Login">
+        <form method="post" action="servlet/AdminManage?action=<%=CONSTANT.ACTIONPARAM.LOGIN %>&redirect=<%=path %>/index.jsp" name="Admin Login">
           <table class="login-align">
             <tr>
               <div class="control-group">

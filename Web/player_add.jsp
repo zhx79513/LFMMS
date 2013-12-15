@@ -37,7 +37,7 @@
 </head>
 <body>
 <div class="container" >
-  <form method="post" action="servlet/PlayerManage?action=add"
+  <form method="post" action="servlet/PlayerManage?action=<%=CONSTANT.ACTIONPARAM.ADD %>&redirect=PlayerManage?action=<%=CONSTANT.ACTIONPARAM.SHOWALL %>%26redirect=<%=path %>/player_mng.jsp"
 		name="course_modify_form">
     <table border="0">
       <tr>

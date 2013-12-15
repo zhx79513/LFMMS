@@ -14,12 +14,13 @@ import javax.servlet.http.HttpSession;
 import com.LFMMS.library.Hibernate.Team;
 import com.LFMMS.library.Hibernate.TeamDAO;
 import com.LFMMS.library.action.Action;
-import com.LFMMS.library.action.team.TeamAction;
-import com.LFMMS.library.action.team.TeamAddAction;
-import com.LFMMS.library.action.team.TeamDeleteAction;
-import com.LFMMS.library.action.team.TeamModifyCommitAction;
-import com.LFMMS.library.action.team.TeamModifyShowAction;
-import com.LFMMS.library.action.team.TeamShowAction;
+import com.LFMMS.library.action.ActionFactory;
+import com.LFMMS.library.action.Team.TeamAction;
+import com.LFMMS.library.action.Team.TeamAddAction;
+import com.LFMMS.library.action.Team.TeamDeleteAction;
+import com.LFMMS.library.action.Team.TeamModifyAction;
+import com.LFMMS.library.action.Team.TeamShowByIdAction;
+import com.LFMMS.library.action.Team.TeamShowAllAction;
 
 public class TeamManage extends HttpServlet {
 
@@ -71,23 +72,16 @@ public class TeamManage extends HttpServlet {
 
 		request.setCharacterEncoding("UTF-8");
 		String strAction = request.getParameter("action");
-		TeamAction action = null;
+		String redirect = request.getParameter("redirect");
 		
-		if (strAction.equals("show")) {
-			action = new TeamShowAction();	
-		} else if (strAction.equals("add")) {
-			action = new TeamAddAction();
-		} else if (strAction.equals("delete")) {
-			action = new TeamDeleteAction();
-		} else if (strAction.equals("modify_show")) {
-			action = new TeamModifyShowAction();
-		} else if (strAction.equals("modify_commit")) {
-			action = new TeamModifyCommitAction();
-		} else {
-			throw new ServletException("Invalid action: " + strAction);
+		ActionFactory factory = new ActionFactory("Team", strAction);
+		try {
+			Action action = factory.getInstance();
+			action.doAction(request);
+			response.sendRedirect(redirect);
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-		
-		action.doAction(request, response);
 	}
 
 	/**

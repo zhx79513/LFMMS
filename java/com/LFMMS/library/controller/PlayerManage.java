@@ -14,12 +14,14 @@ import javax.servlet.http.HttpSession;
 import com.LFMMS.library.Hibernate.Player;
 import com.LFMMS.library.Hibernate.PlayerDAO;
 import com.LFMMS.library.action.Action;
-import com.LFMMS.library.action.player.PlayerAction;
-import com.LFMMS.library.action.player.PlayerAddAction;
-import com.LFMMS.library.action.player.PlayerDeleteAction;
-import com.LFMMS.library.action.player.PlayerModifyCommitAction;
-import com.LFMMS.library.action.player.PlayerModifyShowAction;
-import com.LFMMS.library.action.player.PlayerShowAction;
+import com.LFMMS.library.action.ActionFactory;
+import com.LFMMS.library.action.Player.PlayerAction;
+import com.LFMMS.library.action.Player.PlayerAddAction;
+import com.LFMMS.library.action.Player.PlayerDeleteAction;
+import com.LFMMS.library.action.Player.PlayerModifyAction;
+import com.LFMMS.library.action.Player.PlayerShowByIdAction;
+import com.LFMMS.library.action.Player.PlayerShowAllAction;
+import com.LFMMS.library.constant.CONSTANT;
 
 public class PlayerManage extends HttpServlet {
 
@@ -71,23 +73,16 @@ public class PlayerManage extends HttpServlet {
 
 		request.setCharacterEncoding("UTF-8");
 		String strAction = request.getParameter("action");
-		PlayerAction action = null;
+		String redirect = request.getParameter("redirect");
 		
-		if (strAction.equals("show")) {
-			action = new PlayerShowAction();
-		} else if (strAction.equals("add")) {
-			action = new PlayerAddAction();
-		} else if (strAction.equals("delete")) {
-			action = new PlayerDeleteAction();
-		} else if (strAction.equals("modify_show")) {
-			action = new PlayerModifyShowAction();
-		} else if (strAction.equals("modify_commit")) {
-			action = new PlayerModifyCommitAction();
-		} else {
-			throw new ServletException("Invalid action: " + strAction);
+		ActionFactory factory = new ActionFactory("Player", strAction);
+		try {
+			Action action = factory.getInstance();
+			action.doAction(request);
+			response.sendRedirect(redirect);
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-		
-		action.doAction(request, response);
 	}
 
 	/**

@@ -40,7 +40,7 @@
 </head>
 <body>
 <div class="container" >
-  <form method="post" action="servlet/TeamManage?action=modify_commit"
+  <form method="post" action="servlet/TeamManage?action=<%=CONSTANT.ACTIONPARAM.MODIFY %>&redirect=TeamManage?action=<%=CONSTANT.ACTIONPARAM.SHOWALL %>%26redirect=<%=path %>/team_mng.jsp"
 		name="course_modify_form">
     <table border="0">
       <tr>

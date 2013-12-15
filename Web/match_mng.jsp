@@ -70,8 +70,8 @@
 				<td><%=course.getHomeScore()%></td>
 				<td><%=course.getAwayScore()%></td>
 				<td><a
-					href="servlet/MatchManage?action=modify_show&course_id=<%=course.getId()%>">修改</a>&nbsp;<a
-					href="servlet/MatchManage?action=delete&course_id=<%=course.getId()%>">删除</a>
+					href="servlet/MatchManage?action=<%=CONSTANT.ACTIONPARAM.SHOWBYID %>&course_id=<%=course.getId()%>&redirect=<%=path %>/match_modify.jsp">修改</a>&nbsp;<a
+					href="servlet/MatchManage?action=<%=CONSTANT.ACTIONPARAM.DELETE %>&course_id=<%=course.getId()%>&redirect=MatchManage?action=<%=CONSTANT.ACTIONPARAM.SHOWALL %>%26redirect=<%=path %>/match_mng.jsp">删除</a>
 				</td>
 
 			</tr>

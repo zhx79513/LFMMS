@@ -40,7 +40,7 @@
 </head>
 <body>
 <div class="container" >
-  <form method="post" action="servlet/MatchManage?action=modify_commit"
+  <form method="post" action="servlet/MatchManage?action=<%=CONSTANT.ACTIONPARAM.MODIFY %>&redirect=MatchManage?action=<%=CONSTANT.ACTIONPARAM.SHOWALL %>%26redirect=<%=path %>/match_mng.jsp"
 		name="course_modify_form">
     <table border="0">
       <tr>

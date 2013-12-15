@@ -1,13 +1,13 @@
-<%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*, com.LFMMS.library.Hibernate.Player" errorPage="" %>
+<%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*, com.LFMMS.library.Hibernate.*" errorPage="" %>
 <%@ include file="title_bar.jsp" %>
-<jsp:useBean id="teams" class="java.util.ArrayList" scope="session"></jsp:useBean>
+<jsp:useBean id="courses" class="java.util.ArrayList" scope="session"></jsp:useBean>
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>阿森纳</title>
+<title>赛事中心</title>
 <link href="styles.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
 /* CSS Document */
@@ -102,42 +102,32 @@ tr {
   <caption>
   </caption>
   <tr>
-    <th width="200" class="nobg" scope="col" abbr="Configurations">球员名字</th>
-    <th width="120" scope="col" abbr="Dual 1.8"> <div align="center">所属球队</div></th>
-    <th width="120" scope="col" abbr="Dual 1.8"><div align="center">身高</div></th>
-    <th width="120" scope="col" abbr="Dual 1.8"><div align="center">体重</div></th>
-    <th width="170" scope="col" abbr="Dual 1.8"><div align="center">生日</div></th>
-    <th width="120" scope="col" abbr="Dual 1"><div align="center">球队号码</div></th>
-    <th width="120" scope="col" abbr="Dual 1"><div align="center">位置</div></th>
+    <th width="200" class="nobg" scope="col" abbr="Configurations">主场球队</th>
+    <th width="120" scope="col" abbr="Dual 1.8"> <div align="center">客场球队</div></th>
+    <th width="120" scope="col" abbr="Dual 1.8"><div align="center">比赛轮次</div></th>
+    <th width="120" scope="col" abbr="Dual 1.8"><div align="center">比赛日期</div></th>
   </tr>
   <% 
-  Team team = (Team)teams.get(0);
-  Iterator<Player> it = team.getPlayers().iterator();
+  Iterator<Course> it = courses.iterator();
   boolean odd = true;
   while (it.hasNext()) {
-  Player player = it.next();
+  Course course = it.next();
   if (odd) {
   %>
   <tr>
-    <th scope="row" class="spec"><%=player.getName() %></th>
-    <td><%=player.getTeam().getName() %></td>
-    <td><%=player.getHeight() %></td>
-    <td><%=player.getWeight() %></td>
-    <td><%=player.getBirthday() %></td>
-    <td><%=player.getNumber() %></td>
-    <td><%=player.getPosition() %></td>
+    <th scope="row" class="spec"><%=course.getTeamByHomeId().getName() %></th>
+    <td><%=course.getTeamByAwayId().getName() %></td>
+    <td><%=course.getTurn() %></td>
+    <td><%=course.getMatchDate() %></td>
   </tr>
   <%
   	} else {
   %>
   <tr>
-    <th scope="row" class="specalt"><%=player.getName() %></th>
-    <td class="alt"><%=player.getTeam().getName() %></td>
-    <td class="alt"><%=player.getHeight() %></td>
-    <td class="alt"><%=player.getWeight() %></td>
-    <td class="alt"><%=player.getBirthday() %></td>
-    <td class="alt"><%=player.getNumber() %></td>
-    <td class="alt"><%=player.getPosition() %></td>
+    <th scope="row" class="specalt"><%=course.getTeamByHomeId().getName() %></th>
+    <td class="alt"><%=course.getTeamByAwayId().getName() %></td>
+    <td class="alt"><%=course.getTurn() %></td>
+    <td class="alt"><%=course.getMatchDate() %></td>
   </tr>
   <%
   	}

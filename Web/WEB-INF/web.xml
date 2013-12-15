@@ -20,6 +20,11 @@
 		<servlet-name>AdminManage</servlet-name>
 		<servlet-class>com.LFMMS.library.controller.AdminManage</servlet-class>
 	</servlet>
+  <servlet>
+    <servlet-name>Arsenal</servlet-name>
+    <servlet-class>com.LFMMS.library.controller.Arsenal</servlet-class>
+  </servlet>
+
 
 
 
@@ -44,6 +49,10 @@
 		<servlet-name>AdminManage</servlet-name>
 		<url-pattern>/servlet/AdminManage</url-pattern>
 	</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Arsenal</servlet-name>
+    <url-pattern>/servlet/Arsenal</url-pattern>
+  </servlet-mapping>
 
 	<display-name></display-name>
 	<welcome-file-list>
