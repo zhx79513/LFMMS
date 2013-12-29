@@ -65,9 +65,9 @@
 				<td><%=player.getTeam().getId()%></td>
 				<td><%=player.getNumber()%></td>
 				<td><%=player.getPosition()%></td>
-				<td><%=player.getHeight()%></td>
-				<td><%=player.getWeight()%></td>
-				<td><%=player.getBirthday()%></td>
+				<td><%=player.getHeight() == null ? "" : player.getHeight()%></td>
+				<td><%=player.getWeight() == null ? "" : player.getWeight()%></td>
+				<td><%=player.getBirthday() == null ? "" : player.getBirthday()%></td>
 				<td><a
 					href="servlet/PlayerManage?action=<%=CONSTANT.ACTIONPARAM.SHOWBYID %>&player_id=<%=player.getId()%>&redirect=<%=path %>/player_modify.jsp">修改</a>&nbsp;<a
 					href="servlet/PlayerManage?action=<%=CONSTANT.ACTIONPARAM.DELETE %>&player_id=<%=player.getId()%>&redirect=PlayerManage?action=<%=CONSTANT.ACTIONPARAM.SHOWALL %>%26redirect=<%=path %>/player_mng.jsp">删除</a></td>

@@ -65,15 +65,15 @@
       </tr>
       <tr>
         <td>身高:</td>
-        <td><input type="text" name="height" class="form-control" value="<%=player.getHeight()%>"></td>
+        <td><input type="text" name="height" class="form-control" value="<%=player.getHeight() == null ? "" : player.getHeight()%>"></td>
       </tr>
       <tr>
         <td>体重:</td>
-        <td><input type="text" name="weight" class="form-control" value="<%=player.getWeight()%>"></td>
+        <td><input type="text" name="weight" class="form-control" value="<%=player.getWeight() == null ? "" : player.getWeight()%>"></td>
       </tr>
       <tr>
         <td>生日:</td>
-        <td><input type="text" name="birthday" class="form-control" value="<%=player.getBirthday()%>"></td>
+        <td><input type="text" name="birthday" class="form-control" value="<%=player.getBirthday() == null ? "" : player.getBirthday()%>"></td>
       </tr>
     </table>
     <input type="submit" name="submit" value="修改" class="btn btn-primary">

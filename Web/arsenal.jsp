@@ -123,9 +123,9 @@ tr {
     <td><%=player.getTeam().getName() %></td>
     <td><%=player.getHeight() %></td>
     <td><%=player.getWeight() %></td>
-    <td><%=player.getBirthday() %></td>
-    <td><%=player.getNumber() %></td>
-    <td><%=player.getPosition() %></td>
+    <td><%=player.getBirthday() == null ? "" : player.getBirthday() %></td>
+    <td><%=player.getNumber() == null ? "" : player.getNumber() %></td>
+    <td><%=player.getPosition() == null ? "" : player.getPosition() %></td>
   </tr>
   <%
   	} else {
@@ -135,9 +135,9 @@ tr {
     <td class="alt"><%=player.getTeam().getName() %></td>
     <td class="alt"><%=player.getHeight() %></td>
     <td class="alt"><%=player.getWeight() %></td>
-    <td class="alt"><%=player.getBirthday() %></td>
-    <td class="alt"><%=player.getNumber() %></td>
-    <td class="alt"><%=player.getPosition() %></td>
+    <td class="alt"><%=player.getBirthday() == null ? "" : player.getBirthday() %></td>
+    <td class="alt"><%=player.getNumber() == null ? "" : player.getNumber() %></td>
+    <td class="alt"><%=player.getPosition() == null ? "" : player.getPosition() %></td>
   </tr>
   <%
   	}

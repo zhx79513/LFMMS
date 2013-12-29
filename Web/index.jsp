@@ -89,7 +89,7 @@ $(document).ready(function()
 	width: 700px;
 	height: 500px;
 	z-index: 12;
-	left: 20px;
+	left: 200px;
 	top: 100px;
 }
 

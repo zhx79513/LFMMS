@@ -81,7 +81,7 @@
 						<li><a href="#fakelink">当轮最佳</a></li>
 						<li><a href="#fakelink">当轮集锦</a>
 							<ul>
-								<li><a href="#fakelink">精彩图集</a></li>
+								<li><a href="news.jsp">精彩图集</a></li>
 								<li><a href="#fakelink">精彩视频</a></li>
 								<li><a href="#fakelink">场外花边</a></li>
 							</ul>
