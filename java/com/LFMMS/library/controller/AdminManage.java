@@ -66,6 +66,7 @@ public class AdminManage extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String strAction = request.getParameter("action");
 		String redirect = request.getParameter("redirect");
+		// 
 		
 		ActionFactory factory = new ActionFactory("Admin", strAction);
 		try {
